@@ -1,12 +1,9 @@
-function LstProducto({
-  data,
-}: {
-  data: { nombre: string; descripcion: string; precio: string }[];
-}) {
+function LstProducto({lst}){
+
   return (
     <div className="lst">
-      <h1>Lst</h1>
-      {data.map((elemento: any, index: number) => (
+      <h1>Listado de Productos</h1>
+      {lst.map((elemento: any, index: number) => (
         <div className="col" key={index}>
           <p>{elemento.nombre}</p>
           <p>{elemento.descripcion}</p>

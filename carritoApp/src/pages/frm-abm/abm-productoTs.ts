@@ -1,36 +1,38 @@
 import { useState } from "react";
 
 function AbmProductoTs() {
-  let valor = "";
+  let inputNombre = "";
+  let inputdescripcion = "";
+  let inputprecio = "";
 
-  const objeto = {
-    nombre: "",
-    descripcion: "",
-    precio: "",
-  };
-
-  const [data, setData] = useState<
-    { nombre: string; descripcion: string; precio: string }[]
-  >([]);
+   const [nombre, setNombre] = useState('');
+   const [descripcion, setDescripcion] = useState('');
+   const [precio, setPrecio] = useState('');
 
   function onSubmit(evento: any) {
     evento.preventDefault();
-    const nuevoObjeto = { ...objeto }; // Crear una nueva instancia del objeto
-    setData((prevData) => [...prevData, nuevoObjeto]);
-    limpiar()
+    setNombre(inputNombre);
+    setDescripcion(inputdescripcion)
+    setPrecio(inputprecio)
+    limpiar();
   }
 
   function onChange(evento: any) {
     const input = evento.target;
     if (input.name === "nombre") {
-      valor = evento.target.value;
-      objeto.nombre = valor;
+      if (evento.target.value != undefined) {
+        inputNombre = evento.target.value;
+      } else {
+        console.log("campo requerido");
+      }
     } else if (input.name === "descripcion") {
-      valor = evento.target.value;
-      objeto.descripcion = valor;
+      inputdescripcion = evento.target.value;
     } else if (input.name === "precio") {
-      valor = evento.target.value;
-      objeto.precio = valor;
+      if (evento.target.value != undefined) {
+        inputprecio = evento.target.value;
+      } else {
+        console.log("campo requerido");
+      }
     }
   }
 
@@ -44,8 +46,7 @@ function AbmProductoTs() {
     });
   };
 
-  console.log("data",data)
-  return { onSubmit, onChange, data };
+  return { onSubmit, onChange, nombre,descripcion,precio };
 }
 
 export default AbmProductoTs;
