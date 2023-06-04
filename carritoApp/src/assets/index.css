@@ -1,0 +1,21 @@
+body{
+    height: 100vh; /* Establece el alto del documento completo */
+    margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+    padding: 0; /* Elimina los rellenos predeterminados del cuerpo */
+    flex-direction: column;
+}
+.AppContenedor{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    flex: 1;
+    height: 41rem;
+}
+.columna1{
+    background-color: aqua;
+    grid-column: 1;
+}
+
+.columna2{
+    background-color: aquamarine;
+    grid-column: 2;
+}
