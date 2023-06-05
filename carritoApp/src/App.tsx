@@ -1,19 +1,20 @@
 import AbmProducto from "./pages/frm-abm/abm-producto.tsx";
-import LstProducto from "./pages/lst/lst-producto.tsx";
 import "./assets/index.css";
-import LstProductos from "./pages/lst/lst-producto.ts";
+import LstProducto from "./pages/lst/LstProducto.tsx";
+import AppTs from "./App.ts";
 
 function App() {
-
-  const { lst } = LstProductos();
+  
+  const {agregarItem,items} = AppTs();
+  
 
   return (
     <div className="AppContenedor">
       <div className="columna1">
-        <AbmProducto/>
+        <AbmProducto onAdd={agregarItem} />
       </div>
       <div className="columna2">
-        <LstProducto lst={lst}/>
+        <LstProducto>{items}</LstProducto>
       </div>
     </div>
   );

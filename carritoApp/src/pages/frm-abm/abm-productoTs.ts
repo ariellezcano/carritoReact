@@ -1,39 +1,25 @@
 import { useState } from "react";
 
-function AbmProductoTs() {
-  let inputNombre = "";
-  let inputdescripcion = "";
-  let inputprecio = "";
+function AbmProductoTs(props) {
 
-   const [nombre, setNombre] = useState('');
-   const [descripcion, setDescripcion] = useState('');
-   const [precio, setPrecio] = useState('');
+    const { onAdd:agregarItem } = props;
+    const [producto, setProducto] = useState({ nombre: "", descripcion: "", precio: "" });
+  
 
-  function onSubmit(evento: any) {
+    function onClick(evento: any) {
     evento.preventDefault();
-    setNombre(inputNombre);
-    setDescripcion(inputdescripcion)
-    setPrecio(inputprecio)
+    if (producto.nombre !== "" && producto.precio !== "") {
+      agregarItem(producto);
+      setProducto({ nombre: "", descripcion: "", precio: "" });
+    }
     limpiar();
   }
 
   function onChange(evento: any) {
-    const input = evento.target;
-    if (input.name === "nombre") {
-      if (evento.target.value != undefined) {
-        inputNombre = evento.target.value;
-      } else {
-        console.log("campo requerido");
-      }
-    } else if (input.name === "descripcion") {
-      inputdescripcion = evento.target.value;
-    } else if (input.name === "precio") {
-      if (evento.target.value != undefined) {
-        inputprecio = evento.target.value;
-      } else {
-        console.log("campo requerido");
-      }
-    }
+    const { name, value } = evento.target;
+    setProducto((prevProduct) => {
+      return { ...prevProduct, [name]: value };
+    });
   }
 
   const limpiar = () => {
@@ -46,7 +32,11 @@ function AbmProductoTs() {
     });
   };
 
-  return { onSubmit, onChange, nombre,descripcion,precio };
+  return {
+    onClick,
+    onChange,
+    producto
+  };
 }
 
 export default AbmProductoTs;

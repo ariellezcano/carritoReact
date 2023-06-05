@@ -1,9 +1,12 @@
-function LstProducto({lst}){
+import "./lst-producto.css";
 
+function LstProducto(props) {
+
+  const { children } = props;
   return (
-    <div className="lst">
+    <div className="contenedor">
       <h1>Listado de Productos</h1>
-      {lst.map((elemento: any, index: number) => (
+      {children?.map((elemento: any, index: number) => (
         <div className="col" key={index}>
           <p>{elemento.nombre}</p>
           <p>{elemento.descripcion}</p>

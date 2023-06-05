@@ -1,12 +1,13 @@
 import "./abm-producto.css";
 import AbmProductoTs from "./abm-productoTs";
 
-function AbmProducto() {
-  const { onSubmit, onChange } = AbmProductoTs();
+function AbmProducto(props) {
+
+  const {onClick,onChange, producto} = AbmProductoTs(props);
 
   return (
     <div className="Abm">
-      <form action="" onSubmit={onSubmit}>
+      <form action="" >
         <h1>
           <b>Cargar Producto</b>
         </h1>
@@ -16,6 +17,7 @@ function AbmProducto() {
             className="form-control"
             id="nombre"
             name="nombre"
+            value={producto.nombre}
             onChange={onChange}
           />
           <label htmlFor="">
@@ -28,10 +30,11 @@ function AbmProducto() {
             id="descripcion"
             name="descripcion"
             type="text"
+            value={producto.descripcion}
             onChange={onChange}
           />
           <label htmlFor="">
-            <b>Descripción:</b>
+            <b>Descripción "Opcional":</b>
           </label>
         </div>
         <div className="campo">
@@ -39,7 +42,8 @@ function AbmProducto() {
             className="form-control"
             id="precio"
             name="precio"
-            type="text"
+            type="number"
+            value={producto.precio}
             onChange={onChange}
           />
           <label htmlFor="">
@@ -48,7 +52,7 @@ function AbmProducto() {
         </div>
         <br />
         <div id="contenedorBtn">
-          <button className="btn btn-primary" type="submit">
+          <button onClick={onClick} className="btn btn-primary" type="button">
             Agregar
           </button>
         </div>
