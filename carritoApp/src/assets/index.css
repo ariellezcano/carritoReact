@@ -1,21 +1,28 @@
-body{
-    height: 100vh; /* Establece el alto del documento completo */
-    margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
-    padding: 0; /* Elimina los rellenos predeterminados del cuerpo */
-    flex-direction: column;
+body {
+  height: 100vh; /* Establece el alto del documento completo */
+  margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+  padding: 0; /* Elimina los rellenos predeterminados del cuerpo */
+  flex-direction: column;
 }
-.AppContenedor{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    flex: 1;
-    height: 41rem;
+.AppContenedor {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  flex: 1;
+  height: 41rem;
+  background-color: #4f709c;
 }
-.columna1{
-    background-color: aqua;
-    grid-column: 1;
+.columna1 {
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  grid-column: 1;
 }
 
-.columna2{
-    background-color: aquamarine;
-    grid-column: 2;
+.columna2 {
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  grid-column: 2;
 }

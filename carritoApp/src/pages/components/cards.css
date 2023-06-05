@@ -1,0 +1,18 @@
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  width: 150px; /* Anchura de la card */
+  height: 150px; /* Altura de la card */
+  padding: 10px; /* Espacio interno de la card */
+  margin: 10px; /* Margen alrededor de la card */
+  background-color: #b8e7e1;
+  border: 5px solid #545b77; /* Aplica un borde de 1px de ancho y color gris */
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
