@@ -1,6 +1,6 @@
 import AbmProducto from "./pages/frm-abm/abm-producto.tsx";
 import "./assets/index.css";
-import LstProducto from "./pages/lst/LstProducto.tsx";
+import LstProducto from "./pages/lst/lst-producto.tsx";
 import AppTs from "./App.ts";
 
 function App() {

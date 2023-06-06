@@ -1,16 +1,19 @@
 import { useState } from "react";
+import { Producto } from "../models/index.models";
 
 function AbmProductoTs(props) {
+  const { onAdd: agregarItem } = props;
+  const [producto, setProducto] = useState<Producto>({
+    nombre: "",
+    descripcion: "",
+    precio: 0,
+  });
 
-    const { onAdd:agregarItem } = props;
-    const [producto, setProducto] = useState({ nombre: "", descripcion: "", precio: "" });
-  
-
-    function onClick(evento: any) {
+  function onClick(evento: any) {
     evento.preventDefault();
-    if (producto.nombre !== "" && producto.precio !== "") {
+    if (producto.nombre !== "" && producto.precio > 0) {
       agregarItem(producto);
-      setProducto({ nombre: "", descripcion: "", precio: "" });
+      setProducto({ nombre: "", descripcion: "", precio: 0 });
     }
     limpiar();
   }

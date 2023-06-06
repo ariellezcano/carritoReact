@@ -20,7 +20,7 @@ function AbmProducto(props) {
             value={producto.nombre}
             onChange={onChange}
           />
-          <label htmlFor="">
+          <label htmlFor="nombre">
             <b>Nombre:</b>
           </label>
         </div>
@@ -33,7 +33,7 @@ function AbmProducto(props) {
             value={producto.descripcion}
             onChange={onChange}
           />
-          <label htmlFor="">
+          <label htmlFor="descripcion">
             <b>Descripción "Opcional":</b>
           </label>
         </div>
@@ -46,7 +46,7 @@ function AbmProducto(props) {
             value={producto.precio}
             onChange={onChange}
           />
-          <label htmlFor="">
+          <label htmlFor="precio">
             <b>Precio:</b>
           </label>
         </div>
