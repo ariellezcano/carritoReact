@@ -1,7 +1,9 @@
 import { Producto } from "../models/index.models";
 import "./cards.css";
+import CardsTs from "./cardsTs";
 
-function Cards({ children, cantidad, cantidadProdSum, cantidadProdRest }) {
+function Cards({ children }) {
+  const { sumarCantidad, restarCantidad, cantidad } = CardsTs();
 
   return (
     <div className="contenedor">
@@ -11,24 +13,27 @@ function Cards({ children, cantidad, cantidadProdSum, cantidadProdRest }) {
             <b>{elemento.nombre}</b>
           </p>
           <p>
-            <b>{elemento.descripcion} </b>
+            <b>{elemento.descripcion}</b>
           </p>
           <p>
             <b>${elemento.precio}</b>
           </p>
           <div className="row">
-            <button type="button" onClick={cantidadProdRest}>
-              -1
-            </button>
+            {cantidad > 0 ? (
+              <button type="button" onClick={restarCantidad}>
+                -1
+              </button>
+            ) : (
+              <button type="button" disabled>
+                -1
+              </button>
+            )}
             &nbsp;
             <b>{cantidad}</b>
             &nbsp;
-            <button type="button" onClick={cantidadProdSum}>
+            <button type="button" onClick={sumarCantidad}>
               +1
             </button>
-          </div>
-          <div className="row">
-            <b>{elemento.precio * cantidad}</b>
           </div>
         </div>
       ))}

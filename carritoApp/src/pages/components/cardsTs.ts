@@ -1,20 +1,30 @@
 import { useState } from "react";
 
-function CardsTs(){
+function CardsTs() {
+  const [total, setTotal] = useState(0);
+  const [cantidad, setCantidad] = useState(0);
 
-    const [sumatoriaTotalCarrito, setSumatoriaTotalCarrito] = useState(0);
-    const [precioCantProducto, setPrecioCantProducto] = useState(0);
+  const sumarCantidad = () => {
+    setCantidad(cantidad + 1);
+  };
 
-    const sumatoriaCantProd = (precio: number, cantidad: number) => setPrecioCantProducto(precio*cantidad)
-    const sumatoriaTotalPrecio = () => setSumatoriaTotalCarrito(precioCantProducto+precioCantProducto)
+  const restarCantidad = () => {
+    setCantidad(cantidad - 1);
+  };
 
-
-    return{
-        sumatoriaCantProd, //funcion
-        sumatoriaTotalPrecio, //funcion
-        sumatoriaTotalCarrito, //variable
-        precioCantProducto //variable
+  function totalPrecio(precio: number, cantidad: number) {
+    if (precio > 0 && cantidad > 0) {
+      console.log("cantidad", precio * cantidad);
+      setTotal(precio * cantidad);
     }
+  }
+
+  return {
+    sumarCantidad, //funcion
+    restarCantidad, //funcion
+    total, //variable
+    cantidad, //variable
+  };
 }
 
 export default CardsTs;

@@ -1,20 +1,12 @@
-import { useState } from "react"
+import { useState } from "react";
+import CardsTs from "../components/cardsTs";
 
-function LstProductoTs(){
+function LstProductoTs() {
+  const { total } = CardsTs();
 
-    const [cantidad, setCantidad] = useState(0);
-
-    const cantidadProdSum = () => setCantidad(cantidad + 1)
-    const cantidadProdRest = () => setCantidad(cantidad - 1)
-    
-    
-
-
-    return {
-        cantidad,
-        cantidadProdSum,
-        cantidadProdRest,
-    }
+  return {
+    total,
+  };
 }
 
 export default LstProductoTs;

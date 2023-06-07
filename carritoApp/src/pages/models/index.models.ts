@@ -1,1 +1,1 @@
-export type {Producto} from './components/producto'
+export type {Producto} from './components/producto';

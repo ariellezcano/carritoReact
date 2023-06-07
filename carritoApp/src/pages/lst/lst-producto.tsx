@@ -1,26 +1,18 @@
 import Cards from "../components/cards";
+import { Producto } from "../models/index.models";
 import "./lst-producto.css";
 import LstProductoTs from "./lst-productoTs";
 
 function LstProducto(props) {
   const { children } = props;
-  
-  const {
-    cantidad,
-    cantidadProdSum,
-    cantidadProdRest,
-  } = LstProductoTs();
+
+  const { total } = LstProductoTs();
 
   return (
     <div className="Lst">
-      <h1>Listado de Productos</h1>
+      <h1>Listado de Productos &nbsp;{total}</h1>
       <div className="contenedor">
-        <Cards
-          children={children}
-          cantidad={cantidad}
-          cantidadProdSum = {cantidadProdSum}
-          cantidadProdRest = {cantidadProdRest}
-        />
+        <Cards children={children} />
       </div>
     </div>
   );
