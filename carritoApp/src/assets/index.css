@@ -9,20 +9,25 @@ body {
   grid-template-columns: 1fr 2fr;
   flex: 1;
   height: 41rem;
-  background-color: #6c8099;
+  background-color: antiquewhite;
 }
 .columna1 {
-  /* border-radius: 20px; */
-  border-width: 1px;
+  border-radius: 20px;
+  margin: 30px;
+  border-width: 2px;
   border-style: solid;
   border-color: black;
   grid-column: 1;
+  background-color: #6c8099;
 }
 
 .columna2 {
-  /* border-radius: 20px; */
+  margin: 30px;
+  border-radius: 20px;
   border-width: 2px;
   border-style: solid;
   border-color: black;
   grid-column: 2;
+  background-color: #6c8099;
+
 }
