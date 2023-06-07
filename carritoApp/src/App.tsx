@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="AppContenedor">
       <div className="columna1">
-        <AbmProducto onAdd={agregarItem} />
+        <AbmProducto onAdd={agregarItem} items={items} />
       </div>
       <div className="columna2">
         <LstProducto>{items}</LstProducto>
