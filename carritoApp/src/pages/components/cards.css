@@ -7,7 +7,7 @@
 
 .col {
   width: 150px; /* Anchura de la card */
-  height: 150px; /* Altura de la card */
+  height: 170px; /* Altura de la card */
   padding: 10px; /* Espacio interno de la card */
   margin: 10px; /* Margen alrededor de la card */
   background-color: #b8e7e1;

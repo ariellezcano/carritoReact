@@ -10,11 +10,10 @@ function AppTs() {
   }
 
   function agregarItem(item: Producto) {
-    console.log("soy el item", item);
     setItems([...items, item]);
   }
 
-  function deleteItem(id: any) {
+  function eliminarItem(id: any) {
     setItems((prevItems) => {
       return prevItems.filter((item, index) => {
         return index !== id;
@@ -24,7 +23,8 @@ function AppTs() {
 
   return {
     items,
-    agregarItem
+    agregarItem,
+    eliminarItem
   };
 }
 

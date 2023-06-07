@@ -9,10 +9,10 @@ body {
   grid-template-columns: 1fr 2fr;
   flex: 1;
   height: 41rem;
-  background-color: #4f709c;
+  background-color: #6c8099;
 }
 .columna1 {
-  border-radius: 20px;
+  /* border-radius: 20px; */
   border-width: 1px;
   border-style: solid;
   border-color: black;
@@ -20,7 +20,7 @@ body {
 }
 
 .columna2 {
-  border-radius: 20px;
+  /* border-radius: 20px; */
   border-width: 2px;
   border-style: solid;
   border-color: black;

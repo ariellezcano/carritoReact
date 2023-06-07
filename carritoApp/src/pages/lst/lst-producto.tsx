@@ -6,7 +6,7 @@ import "./lst-producto.css";
 import LstProductoTs from "./lst-productoTs";
 
 function LstProducto(props) {
-  const { children } = props;
+  const { children, eliminarItem } = props;
 
   const { total, cantidad, sumarCantidad, restarCantidad } = LstProductoTs({
     children,
@@ -15,13 +15,14 @@ function LstProducto(props) {
   console.log("listado", total);
   return (
     <div className="Lst">
-      <h1>Listado de Productos &nbsp;&nbsp;{total}</h1>
+      <h1>Listado de Productos &nbsp;&nbsp;${total}</h1>
       <div className="contenedor">
         <Cards
           children={children}
           sumarCantidad={sumarCantidad}
           restarCantidad={restarCantidad}
           cantidad={cantidad}
+          eliminarItem = {eliminarItem}
         />
       </div>
     </div>

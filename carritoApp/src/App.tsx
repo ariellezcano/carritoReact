@@ -5,8 +5,7 @@ import AppTs from "./App.ts";
 
 function App() {
   
-  const {agregarItem,items} = AppTs();
-  
+  const {agregarItem,eliminarItem,items} = AppTs();
 
   return (
     <div className="AppContenedor">
@@ -14,7 +13,7 @@ function App() {
         <AbmProducto onAdd={agregarItem} items={items} />
       </div>
       <div className="columna2">
-        <LstProducto>{items}</LstProducto>
+        <LstProducto eliminarItem={eliminarItem}>{items}</LstProducto>
       </div>
     </div>
   );
