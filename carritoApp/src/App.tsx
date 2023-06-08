@@ -2,11 +2,11 @@ import AbmProducto from "./pages/frm-abm/abm-producto.tsx";
 import "./assets/index.css";
 import LstProducto from "./pages/lst/lst-producto.tsx";
 import AppTs from "./App.ts";
+import LstProductoTs from "./pages/lst/lst-productoTs.ts";
 
 function App() {
   
   const {agregarItem,eliminarItem,items} = AppTs();
-
   return (
     <div className="AppContenedor">
       <div className="columna1">

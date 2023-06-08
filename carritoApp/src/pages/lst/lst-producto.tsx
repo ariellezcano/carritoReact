@@ -5,9 +5,7 @@ import LstProductoTs from "./lst-productoTs";
 function LstProducto(props) {
   
   const { children, eliminarItem } = props;
-
   const { totalPrecio } = LstProductoTs();
-
   console.log("total lista", totalPrecio);
 
   return (

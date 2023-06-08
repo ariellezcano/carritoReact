@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function LstProductoTs() {
+const LstProductoTs = () => {
   const [totalPrecio, setTotal] = useState(0);
 
   const actualizarPrecioSuma = (precio: number) => {
@@ -12,11 +12,10 @@ function LstProductoTs() {
   };
 
   console.log("este es el total ", totalPrecio);
-
   return {
     actualizarPrecioSuma,
     actualizarPrecioResta,
-    totalPrecio,
+    totalPrecio
   };
 }
 
