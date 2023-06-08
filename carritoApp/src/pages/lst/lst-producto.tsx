@@ -1,29 +1,22 @@
-import { useState } from "react";
 import Cards from "../components/cards";
-import CardsTs from "../components/cardsTs";
-//import { Producto } from "../models/index.models";
 import "./lst-producto.css";
 import LstProductoTs from "./lst-productoTs";
 
 function LstProducto(props) {
+  
   const { children, eliminarItem } = props;
 
-  const { total, cantidad, sumarCantidad, restarCantidad } = LstProductoTs({
-    children,
-  });
+  const { totalPrecio } = LstProductoTs();
 
-  console.log("listado", total);
+  console.log("total lista", totalPrecio);
+
   return (
     <div className="Lst">
-      <h1>Listado de Productos &nbsp;&nbsp;${total}</h1>
+      <div className="row">
+        <h1>Listado de Productos &nbsp;&nbsp;${totalPrecio}</h1>
+      </div>
       <div className="contenedor">
-        <Cards
-          children={children}
-          sumarCantidad={sumarCantidad}
-          restarCantidad={restarCantidad}
-          cantidad={cantidad}
-          eliminarItem = {eliminarItem}
-        />
+        <Cards children={children} eliminarItem={eliminarItem} />
       </div>
     </div>
   );
